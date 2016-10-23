@@ -1,0 +1,30 @@
+body {
+  background-color: #34495e;
+  margin: 0;
+  font-family: 'Hammersmith One', sans-serif;
+  color: white;
+}
+
+.input {
+  font-style: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 50%;
+  display: inline;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 25%;
+}
+
+.btn {
+  color: white;
+  background-color: rgb(145, 145, 145);
+  height: 2rem;
+  width: 9rem;
+  box-sizing: padding-box;
+  margin-left: 43%;
+}
+
+.text {
+  text-align: center;
+}
