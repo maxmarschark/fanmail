@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS signup;
+CREATE DATABASE signup;
+
+\c signup

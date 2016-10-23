@@ -10,6 +10,24 @@ class Signup extends Component {
     }
   }
 
+  handleChange(e) {
+    const input = e.target;
+    const inputName = input.getAttribute('name');
+    const updated = {};
+    updated[inputName] = input.value;
+  }
+
+  handleSubmit(e) {
+  e.preventDefault();
+  request.post('/api/signupForm')
+         .send(this.state)
+         .then((user) => {
+           this.updateAuth();
+           let cleanUser = JSON.parse(user.text);
+           this.props.router.push('/signupForm');
+         });
+}
+
   render() {
     return (
       <div id="loginBody">
