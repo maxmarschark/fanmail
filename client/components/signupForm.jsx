@@ -10,12 +10,11 @@ class Signup extends Component {
     }
   }
 
-  handleChange(e) {
-    const input = e.target;
-    const inputName = input.getAttribute('name');
-    const updated = {};
-    updated[inputName] = input.value;
-  }
+  // handleChange(e) {
+  //   const username = e.target;
+  //   const useremail = input.getAttribute('name');
+  //   updated[inputName] = input.value;
+  // }
 
   handleSubmit(e) {
   e.preventDefault();
