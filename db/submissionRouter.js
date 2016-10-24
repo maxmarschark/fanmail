@@ -3,6 +3,6 @@ const SubmissionController = require ('./submissionController.js');
 
 const router = express.Router();
 
-router.post('/', submissionController);
+router.post('/', SubmissionController);
 
-module.exports default;
+module.exports = router;
