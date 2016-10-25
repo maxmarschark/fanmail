@@ -1,8 +1,8 @@
 const express = require('express');
-const SubmissionController = require ('./submissionController.js');
+const SubmissionController = require('./submissionController');
 
 const router = express.Router();
 
-router.post('/', SubmissionController);
+router.post('/signup', SubmissionController.create);
 
 module.exports = router;

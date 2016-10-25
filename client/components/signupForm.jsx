@@ -6,26 +6,31 @@ class Signup extends Component {
     super();
     this.state = {
       name: '',
-      email: ''
-    }
+      email: '',
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // handleChange(e) {
-  //   const username = e.target;
-  //   const useremail = input.getAttribute('name');
-  //   updated[inputName] = input.value;
-  // }
+  handleChange(e) {
+    const target = e.target;
+    const name = target.getAttribute('name');
+    const value = target.value;
+    const updated = {};
+    updated[name] = value;
+    this.setState(updated);
+  }
 
   handleSubmit(e) {
-  e.preventDefault();
-  request.post('/api/signupForm')
-         .send(this.state)
-         .then((user) => {
-           this.updateAuth();
-           let cleanUser = JSON.parse(user.text);
-           this.props.router.push('/signupForm');
-         });
-}
+    e.preventDefault();
+    request.post('/api/signup')
+           .send(this.state)
+           .then((user) => {
+             console.log('success');
+             const cleanUser = JSON.parse(user.text);
+             this.props.router.push('/signupForm');
+           });
+  }
 
   render() {
     return (
@@ -33,10 +38,10 @@ class Signup extends Component {
         <h1 className="text">Welcome to the Mailing List</h1>
           <p className="text">Enter your name & email to join</p>
           <div id="login-form">
-            <input className="input" name="text" onChange={this.handleChange} type="text" placeholder="Your Name" />
+            <input className="input" name="name" onChange={this.handleChange} type="text" placeholder="Your Name" />
           </div>
           <div>
-            <input className="input" name="text" onChange={this.handleChange} type="text" placeholder="Your Email" />
+            <input className="input" name="email" onChange={this.handleChange} type="text" placeholder="Your Email" />
           </div>
           <button className="btn" onClick={this.handleSubmit}>Submit</button>
       </div>
